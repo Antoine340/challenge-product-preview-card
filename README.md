@@ -17,7 +17,7 @@ This is a solution to the [Product Preview Card component challenge on Frontend 
 ![](./screenshot.png)
 ### Links
 
-- Solution URL: [https://effortless-gelato-738bfe.netlify.app/](https://effortless-gelato-738bfe.netlify.app/)
+- Solution URL: [https://endearing-mousse-55e69b.netlify.app/](https://effortless-gelato-738bfe.netlify.app/)
 
 ## Built with
 
