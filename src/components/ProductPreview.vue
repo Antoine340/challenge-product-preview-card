@@ -10,6 +10,7 @@
     <v-col cols="12" md="6">
       <v-img
         :src="$vuetify.display.smAndDown ? 'images/image-product-mobile.jpg' : 'images/image-product-desktop.jpg'"
+        class="card-left"
         alt="product"
         width="100%"
         height="100%"
@@ -18,7 +19,7 @@
     <v-col cols="12" md="6">
       <v-card
         elevation="0"
-        class="fill-height d-flex flex-column"
+        class="card-right fill-height d-flex flex-column"
         :class="{
           'pa-12': $vuetify.display.smAndUp,
           'pa-6': $vuetify.display.xs,
@@ -91,10 +92,18 @@ h1 {
     background-color: #1E4135!important;
   }
 }
+.card {
+  &-left {
+    border-radius: 32px 0 0 32px;
+  }
+  &-right {
+    border-radius: 0 32px 32px 0;
+  }
+}
 .container {
   box-shadow: 10px 15px 25px 0px rgba(0,0,0,0.1);
-  border-radius: 32px;
   max-width: 800px;
+  border-radius: 32px;
 }
 .product-subtitle {
   letter-spacing: 8px;
