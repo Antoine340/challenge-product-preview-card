@@ -9,8 +9,17 @@
   >
     <v-col cols="12" md="6">
       <v-img
-        :src="$vuetify.display.smAndDown ? 'images/image-product-mobile.jpg' : 'images/image-product-desktop.jpg'"
+        v-if="$vuetify.display.mdAndUp"
+        src="/images/image-product-desktop.jpg"
         class="card-left"
+        alt="product"
+        width="100%"
+        height="100%"
+      />
+      <v-img
+        v-if="$vuetify.display.smAndDown"
+        src="/images/image-product-mobile.jpg"
+        class="card-left--mobile"
         alt="product"
         width="100%"
         height="100%"
@@ -23,6 +32,7 @@
         :class="{
           'pa-12': $vuetify.display.smAndUp,
           'pa-6': $vuetify.display.xs,
+          'card-right--mobile': $vuetify.display.smAndDown,
         }"
       >
         <v-card-subtitle class="product-subtitle mb-4 pa-0">
@@ -70,8 +80,7 @@
               width="24"
               height="24"
               class="mr-4"
-            >
-            </v-img>
+            />
             <h3><b>Add to Cart</b></h3>
           </v-btn>
         </v-card-actions>
@@ -95,13 +104,21 @@ h1 {
 .card {
   &-left {
     border-radius: 32px 0 0 32px;
+
+    &--mobile {
+      border-radius: 32px 32px 0 0;
+    }
   }
   &-right {
     border-radius: 0 32px 32px 0;
+
+    &--mobile {
+      border-radius: 0 0 32px 32px;
+    }
   }
 }
 .container {
-  box-shadow: 10px 15px 25px 0px rgba(0,0,0,0.1);
+  box-shadow: 10px 15px 25px 0 rgba(0,0,0,0.1);
   max-width: 800px;
   border-radius: 32px;
 }
